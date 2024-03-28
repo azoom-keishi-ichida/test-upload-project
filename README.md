@@ -41,3 +41,12 @@ The easiest way to deploy your project is to use [Payload Cloud](https://payload
 
 If you have any issues or questions, reach out to us on [Discord](https://discord.com/invite/payload) or start a [GitHub discussion](https://github.com/payloadcms/payload/discussions).
 # test-upload-project
+
+
+
+
+# postgresql downloadURL
+ https://www.postgresql.org/
+
+# create DB
+Create a database named payload_test_cms and add it to the .env file.
