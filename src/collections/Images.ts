@@ -7,21 +7,21 @@ export const Images: CollectionConfig = {
     adminThumbnail: 'thumbnail',
     mimeTypes: ['image/*'],
   },
+  
   fields: [
     {
       name: 'imageUrl',
+      label:"画像URL",
       type: 'text',
       required: true,
     },
     {
-      name: 'status',
-      type: 'checkbox', 
-    },
-    {
       name: 'tags',
+      label:"タグ",
       type: 'relationship',
       relationTo: Tags.slug, 
       hasMany: true
     },
   ],
+ 
 }

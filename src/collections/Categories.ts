@@ -5,24 +5,27 @@ export const Categories: CollectionConfig = {
   fields: [
     {
       name: 'title',
+      label:"カテゴリー",
       type: 'text', 
+      unique: true,
+      admin:{
+        placeholder:"空間の用途",
+      }
     },
-    {
-      name: 'status',
-      type: 'checkbox', 
-    },
-    {
-      name: 'color',
-      type: 'select',
-      options: ['mint', 'dark-gray', 'white'],
-    },
+    
     {
       name: 'tags',
+      label:"タグ",
       type: 'relationship',
       relationTo: 'tags',
       hasMany: true
+      
     },
   ],
+  admin: {
+    useAsTitle: "title",
+    
+  },
 }
 
 
