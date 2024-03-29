@@ -9,11 +9,21 @@ app.get('/', (_, res) => {
   res.redirect('/admin')
 })
 
-app.get('/sss',async (req, res)=>{
+app.get('/test',async (req, res)=>{
+console.log("------------");
+// console.log("payload.db.drizzle 1111111111 ",payload.db.drizzle.query);
+// const collections = payload.collections;
+// console.log("collections >>>", collections);
+// Assuming payload is your object
+const tables = Object.keys(payload.db.drizzle.query);
 
-  const stringifiedQuery = await payload.find({collection:"images",where:{'tags.title':{equals:'外観'}}})
-  console.log(stringifiedQuery.docs[0].tags)
-
+for (const table of tables) {
+  const schema = payload.db.drizzle.query[table].fullSchema;
+  console.log(`Schema for >>>>>> ${table}:`, schema);
+}
+  // const stringifiedQuery = await payload.find({collection:"images",where:{'tags.title':{equals:'外観'}}})
+  // console.log(stringifiedQuery.docs[0].tags)
+return res.send("ok")
 })
 
 const start = async () => {
